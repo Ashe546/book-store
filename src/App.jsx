@@ -1,16 +1,21 @@
+import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import Book from './components/Book';
+import Nav from './components/Nav';
+import Categories from './components/Categories';
+import Addbook from './components/Addbook';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Navbar from './components/Navbar';
-import Category from './pages/Category';
 
 function App() {
   return (
-    <div className="container">
-      <Navbar />
+    <div className="App">
+      <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/categories" element={<Category />} />
+        <Route path="/" element={
+        <Book />
+        } />
+        <Route path="/catagories" element={<Categories />} />
+        <Route path="/add" element={<Addbook />} />
       </Routes>
     </div>
   );
